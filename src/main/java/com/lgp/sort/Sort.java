@@ -39,7 +39,7 @@ public class Sort {
 
         int[] array8 = new int[]{8, 3, 23, 1, 7, 4, 6, 9, 58, 11};
         System.out.println("归并排序");
-        printArr(array8);
+//        printArr(array8);
         int[] temp = new int[array8.length];
         mergeSort(array8, 0, array8.length - 1, temp);
 
@@ -63,7 +63,7 @@ public class Sort {
      * 计数排序
      */
     private static void countSort(int[] array, int max) {
-        printArr(array);
+//        printArr(array);
 
         // 存储"被排序数据"的临时数组
         int[] temp = new int[array.length];
@@ -78,7 +78,7 @@ public class Sort {
         for (int i = array.length - 1; i >= 0; i--) {
             temp[buckets[array[i]] - 1] = array[i];
             buckets[array[i]]--;
-            printArr(temp);
+//            printArr(temp);
         }
     }
 
@@ -88,7 +88,7 @@ public class Sort {
     public static void radixSort(int[] arr, int max2) {
         // exp 指数。当对数组按各位进行排序时，exp=1；按十位进行排序时，exp=10；...
         // 从个位开始，对数组a按"指数"进行排序
-        printArr(arr);
+//        printArr(arr);
 
         for (int exp = 1; max2 / exp > 0; exp *= 10) {
             // 存储"被排序数据"的临时数组
@@ -123,7 +123,7 @@ public class Sort {
 
             // 将排序好的数据赋值给a[]
             System.arraycopy(output, 0, arr, 0, arr.length);
-            printArr(arr);
+//            printArr(arr);
         }
     }
 
@@ -140,10 +140,9 @@ public class Sort {
             while (sorted[i] != 0) {
                 temp[j++] = i;
                 sorted[i] -= 1;
-                printArr(temp);
+//                printArr(temp);
             }
         }
-
     }
 
     /**
@@ -187,15 +186,16 @@ public class Sort {
         while (left <= right) {
             arr[left++] = temp[t++];
         }
-        printArr(arr);
+//        printArr(arr);
     }
 
-
-    //堆排序
+    /**
+     * 堆排序
+     */
     public static void heapSort(int[] array) {
-        printArr(array);
+//        printArr(array);
         array = buildMaxHeap(array);
-        printArr(array);
+//        printArr(array);
         System.out.println();
         for (int i = array.length - 1; i > 1; i--) {
             //将堆顶元素和堆低元素交换，即得到当前最大元素正确的排序位置
@@ -204,7 +204,7 @@ public class Sort {
             array[i] = temp;
             //整理，将剩余的元素整理成堆
             adjustDownToUp(array, 0, i);
-            printArr(array);
+//            printArr(array);
         }
     }
 
@@ -282,7 +282,7 @@ public class Sort {
      * 选择排序
      */
     public static void selectionSort(int[] a) {
-        printArr(a);
+//        printArr(a);
         int n = a.length;
         for (int i = 0; i < n; i++) {
             int k = i;
@@ -298,7 +298,7 @@ public class Sort {
                 a[i] = a[k];
                 a[k] = tmp;
             }
-            printArr(a);
+//            printArr(a);
 
         }
     }
@@ -310,7 +310,7 @@ public class Sort {
         int start = low;
         int end = high;
         int key = a[low];
-        printArr(a);
+//        printArr(a);
 
         while (end > start) {
             //从后往前比较
@@ -348,7 +348,7 @@ public class Sort {
      * 冒泡排序
      */
     public static void bubbleSort(int[] arr) {
-        printArr(arr);
+//        printArr(arr);
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - i - 1; j++) {
                 if (arr[j + 1] < arr[j]) {
@@ -357,7 +357,7 @@ public class Sort {
                     arr[j + 1] = temp;
                 }
             }
-            printArr(arr);
+//            printArr(arr);
         }
     }
 
@@ -365,10 +365,7 @@ public class Sort {
      * 希尔排序
      */
     public static void shellSort(int[] arrays) {
-        printArr(arrays);
-        if (arrays == null || arrays.length <= 1) {
-            return;
-        }
+//        printArr(arrays);
         //增量
         int incrementNum = arrays.length / 2;
         while (incrementNum >= 1) {
@@ -384,7 +381,7 @@ public class Sort {
             }
             //设置新的增量
             incrementNum = incrementNum / 2;
-            printArr(arrays);
+//            printArr(arrays);
         }
     }
 
@@ -392,7 +389,7 @@ public class Sort {
      * 二分排序
      */
     public static void binarySort(int[] source) {
-        printArr(source);
+//        printArr(source);
         for (int i = 1; i < source.length; i++) {
             // 查找区上界
             int low = 0;
@@ -419,7 +416,7 @@ public class Sort {
 
             //将待插入记录回填到正确位置.
             source[low] = temp;
-            printArr(source);
+//            printArr(source);
         }
     }
 
@@ -428,7 +425,7 @@ public class Sort {
      **/
     private static void directInsertSort(int[] array) {
         //输出原数组的内容
-        printArr(array);
+//        printArr(array);
         for (int i = 1; i < array.length; i++) {
             for (int j = 0; j < i; j++) {
                 if (array[i] < array[j]) {
@@ -438,7 +435,7 @@ public class Sort {
                 }
             }
             //输出排序后的相关结果
-            printArr(array);
+//            printArr(array);
         }
     }
 }
